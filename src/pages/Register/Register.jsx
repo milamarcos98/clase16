@@ -14,7 +14,7 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3000/users/register', userData)
+    await axios.post(process.env.BASE_URL+'/users/register', userData)
     .then((res) => {
       console.log(res)
       navigate("/login")

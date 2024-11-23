@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3000/users/login', userData, {
+    await axios.post(process.env.BASE_URL+'/users/login', userData, {
       headers: {'token': auth}
     })
     .then((res) => {
@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div>
       <h1>Login</h1>
-      <p>Hola {user.name}!</p>
+      {/* <p>Hola {user?.name}!</p> */}
       <form>
         <div>
           <label>Password</label>
