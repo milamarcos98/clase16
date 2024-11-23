@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await axios.post(process.env.BASE_URL+'/users/login', userData, {
+    await axios.post(import.meta.env.VITE_BASE_URL+'/users/login', userData, {
       headers: {'token': auth}
     })
     .then((res) => {
